@@ -11,6 +11,7 @@ export default function Home(){
   const navigation = useNavigation();
 
   const [input, setInput] = useState('');
+  const [operationFinished, setOperationFinished] = useState(false);
 
   function handleCleanInput(){
     setInput('');
@@ -24,10 +25,23 @@ export default function Home(){
     const result = calculateExpression(input);
     setList([...list, input+` = ${result.toString()}`]);
     setInput(result.toString());
+    setOperationFinished(true);
   }
 
   function clickButton(value){
-    setInput(input + value)
+    if(operationFinished){
+      if(value === '+' || value === '-' || value === '*' || value === '/'){
+        setInput(input + value);
+      }
+      else{
+        setInput(value);
+      }
+      
+      setOperationFinished(false);
+    }
+    else{
+      setInput(input + value);
+    }
   }
 
   function handleNavigateToMenu(){
