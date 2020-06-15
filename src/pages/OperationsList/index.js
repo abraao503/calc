@@ -11,13 +11,17 @@ export default function OperationsList(){
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={list}
-        keyExtractor={(x, i) => i.toString()}
-        renderItem={(item) => (
-          <Text>{item.item}</Text>
-        )}
-      />
+      <View style={styles.list}>
+        <FlatList
+          data={list}
+          keyExtractor={(x, i) => i.toString()}
+          renderItem={(item) => (
+            <View style={styles.listItem}>
+              <Text style={styles.listItemText}>{item.item}</Text>
+            </View>
+          )}
+          />
+      </View>
     </View>
   )
 }

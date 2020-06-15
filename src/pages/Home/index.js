@@ -38,78 +38,82 @@ export default function Home(){
     <View style={styles.container}>
       <View style={styles.calculator}>
         <TextInput
+          style={styles.input}
           keyboardType='decimal-pad'
           placeholderTextColor="#FFF"
           value={input}
           onChangeText={setInput}
           placeholder="Entre com uma operação..."
         >
-        </TextInput>
+      </TextInput>
         <View style={styles.grid}>
           <View style={styles.line}>
             <TouchableOpacity
               onPress={() => clickButton('7')}
-              style={styles.button}><Text>7</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>7</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('8')}
-              style={styles.button}><Text>8</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>8</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('9')}
-              style={styles.button}><Text>9</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>9</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('*')}
-              style={styles.button}><Text>X</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>X</Text></TouchableOpacity>
           </View>
           <View style={styles.line}>
             <TouchableOpacity
               onPress={() => clickButton('4')}
-              style={styles.button}><Text>4</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>4</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('5')}
-              style={styles.button}><Text>5</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>5</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('6')}
-              style={styles.button}><Text>6</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>6</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('-')}
-              style={styles.button}><Text>-</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>-</Text></TouchableOpacity>
           </View>
           <View style={styles.line}>
             <TouchableOpacity
               style={styles.button}
               onPress={() => clickButton('1')}
-            ><Text>1</Text></TouchableOpacity>
+            ><Text style={styles.buttonText}>1</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('2')}
-              style={styles.button}><Text>2</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>2</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('3')}
-              style={styles.button}><Text>3</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>3</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('+')}
-              style={styles.button}><Text>+</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>+</Text></TouchableOpacity>
           </View>
           <View style={styles.line}>
             <TouchableOpacity
               style={styles.button}
               onPress={handleCleanInput}
-            ><Text>Limpar</Text></TouchableOpacity>
+            ><Text style={styles.buttonText}>Limpar</Text></TouchableOpacity>
             <TouchableOpacity
               style={styles.button}
               onPress={() => handleSetResult()}
-            ><Text>=</Text></TouchableOpacity>
+            ><Text style={styles.buttonText}>=</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('1')}
-              style={styles.button}><Text>0</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>0</Text></TouchableOpacity>
             <TouchableOpacity
               onPress={() => clickButton('/')}
-              style={styles.button}><Text>/</Text></TouchableOpacity>
+              style={styles.button}><Text style={styles.buttonText}>/</Text></TouchableOpacity>
           </View>
         </View>
       </View>
       <TouchableOpacity
+        style={styles.openMenu}
         onPress={handleNavigateToMenu}
-        ><Text>ABRIR MENU</Text></TouchableOpacity>
+      >
+        <Text style={styles.openMenuText}>ABRIR MENU</Text>
+      </TouchableOpacity>
     </View>
   )
 }
